@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+body {
+    background-image: url("./assets/backgrounds/laptop-bg.jpg");
+    background-size: 100vw 1280px;
+    background-repeat: no-repeat;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('./fonts/poppins.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

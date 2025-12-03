@@ -1,0 +1,62 @@
+.profile-info {
+    width: 30%;
+    position: absolute;
+    background: #2424242c;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    color: #E5E5E3;
+    border-radius: 10px;
+}
+
+.profile-info a {
+    color: #E5E5E3;
+}
+
+.fallback-content {
+    width: 100%;
+    background: #4e2424a2;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgb(199, 97, 97);
+    color: rgb(214, 131, 131);    
+    animation: shadow-pulse 1.5s infinite alternate;
+}
+
+@keyframes shadow-pulse {
+    from{
+        box-shadow: 0 0 20px rgb(199, 97, 97);
+    }
+
+    to{
+        box-shadow: 0 0 20px rgb(116, 62, 62);
+    }    
+}
+
+p {
+    margin: 8px 0 8px 0;
+}
+
+.profile-info__avatar {
+    width: 200px;
+    margin: 10px 0 10px 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgb(153, 51, 236);
+}
+
+.profile-info__username {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.profile-info__name {
+    color: #b9b9b8;
+}
+
+.profile-info__follow-group {
+
+    width: 50%;
+    display: inline-block;
+
+
+}
