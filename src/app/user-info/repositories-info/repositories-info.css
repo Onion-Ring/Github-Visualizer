@@ -1,9 +1,17 @@
-.repositories-info{
+.repositories-info,.no-repos {
     width: 69%;
     backdrop-filter: blur(10px);
     padding: 10px;
-    background: #2424242c;    
-    border-radius: 10px;    
+    background: #2424242c;
+    border-radius: 10px;
     position: absolute;
     left: 31%;
+}
+
+.no-repos {
+    background: #4e2424a2;
+    box-shadow: 0 0 20px rgb(199, 97, 97);
+    color: rgb(214, 131, 131);
+    font-size: 20px;
+    animation: shadow-pulse 1.5s infinite alternate;
 }

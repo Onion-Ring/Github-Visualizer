@@ -5,13 +5,22 @@
     padding: 0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
+    list-style-type: none;
 }
 
 a {
     text-decoration: none;
 }
 
+@keyframes shadow-pulse {
+    from {
+        box-shadow: 0 0 20px rgb(199, 97, 97);
+    }
 
+    to {
+        box-shadow: 0 0 20px rgb(116, 62, 62);
+    }
+}
 
 body {
     background-image: url("./assets/backgrounds/laptop-bg.jpg");

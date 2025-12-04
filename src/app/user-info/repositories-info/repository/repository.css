@@ -1,9 +1,25 @@
 .repository{    
     position: relative;    
-    margin: 15px 0 15px 0;
+    margin: 25px 0 25px 0;
     width: 95%;
     left: 2.5%;
-    background: #44434231;    
+    background: #18171752;    
     border-radius: 10px;
-    padding: 10px;        
+    padding: 10px;   
+    color: #E5E5E3;
+    box-shadow: 0 0 14px rgb(167, 199, 78);
+}
+
+.repository a{
+    color: #E5E5E3;
+    
+}
+
+.repository__dates{
+    text-align: left;
+    margin: 15px 0 15px 0;
+}
+
+.repository__dates span{
+    color: #b9b9b8;
 }

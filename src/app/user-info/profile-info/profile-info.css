@@ -23,15 +23,6 @@
     animation: shadow-pulse 1.5s infinite alternate;
 }
 
-@keyframes shadow-pulse {
-    from{
-        box-shadow: 0 0 20px rgb(199, 97, 97);
-    }
-
-    to{
-        box-shadow: 0 0 20px rgb(116, 62, 62);
-    }    
-}
 
 p {
     margin: 8px 0 8px 0;

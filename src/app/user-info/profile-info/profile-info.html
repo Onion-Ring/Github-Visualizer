@@ -1,4 +1,4 @@
-@if (githubService.getErrorMsg().statusCode === undefined && githubProfile.getUser() !== "") {
+@if (errorService.getErrorMessage().statusCode === undefined && githubProfile.getUser() !== "") {
 <div class="profile-info">
     <a href={{githubProfile.getHtmlUrl()}} target="_blank">
         <img class="profile-info__avatar" alt="github user img" src={{githubProfile.getAvatarUrl()}} />
@@ -25,10 +25,10 @@
 
     <p>{{githubProfile.getCreatedAt() | date:'MMMM - dd - yyyy' }}</p>
 </div>
-}@else if (githubService.getErrorMsg().statusCode !== undefined) {
+}@else if (errorService.getErrorMessage().statusCode !== undefined) {
 <div class="fallback-content">
     <h2>Sorry, the provided account could not be found</h2>
-    <p>{{githubService.getErrorMsg().statusCode}}</p>
-    <p>{{githubService.getErrorMsg().message}}</p>
+    <p>{{errorService.getErrorMessage().statusCode}}</p>
+    <p>{{errorService.getErrorMessage().message}}</p>
 </div>
 }

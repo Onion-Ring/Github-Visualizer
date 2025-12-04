@@ -1,4 +1,16 @@
 <div class="repository">
-    <h3>Title</h3>
-    <p>Description</p>                                
+    <a target="_blank" href="{{repo().getUrl()}}">
+        <h3>{{repo().getName()}}</h3>
+        <p>{{repo().getFullName()}}</p>          
+    </a>
+    @if (repo().getFork()) {
+        <a target="_blank" href="{{repo().getForkUrl()}}" >
+            <p>Fork</p>
+        </a>
+    }
+    <ul class="repository__dates">
+        <li>Repo created at:<span> {{repo().getCreatedAt() | date: 'dd/MM/yyyy - hh:mm:ss'}}</span></li>
+        <li>Repo updated at: <span>{{repo().getUpdatedAt() | date: 'dd/MM/yyyy - hh:mm:ss'}}</span></li>
+        <li>Last push: <span>{{repo().getPushedAt() | date: 'dd/MM/yyyy - hh:mm:ss'}}</span></li>
+    </ul>
 </div>

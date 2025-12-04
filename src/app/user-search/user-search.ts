@@ -1,6 +1,8 @@
 import { Component, inject, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GithubRequestService } from '../services/github-request-service';
+import { AccountInfoService } from '../services/account-info-service';
+import { ErrorService } from '../services/error-service';
 
 @Component({
   selector: 'app-user-search',
@@ -11,15 +13,24 @@ import { GithubRequestService } from '../services/github-request-service';
 export class UserSearch {
 
   usernameIntroduced = signal<string>("");
-  githubService = inject(GithubRequestService);
+  githubRequestService = inject(GithubRequestService);
+  accountInfoService = inject(AccountInfoService);
+  errorService = inject(ErrorService);
   userSearched = output<boolean>();
 
   async searchUserName() {
 
-    if (this.usernameIntroduced().trim().length > 0) {      
+    if (this.usernameIntroduced().trim().length > 0) {
       this.usernameIntroduced.set(this.usernameIntroduced().trim());
-      //sets user info
-      await this.githubService.getUserInformation(this.usernameIntroduced());      
+      
+      try {
+        this.accountInfoService.setGithubRepositoriesInfo(await this.githubRequestService.getUserRepositories(this.usernameIntroduced()));
+        this.accountInfoService.setGithubProfileInformation(await this.githubRequestService.getUserInformation(this.usernameIntroduced()));
+        this.errorService.setErrorMessage({ statusCode: undefined, message: undefined });                
+      } catch (error: any) {
+        this.errorService.setErrorMessage({ statusCode: error.response.status, message: error.response.data.message });
+      }
+
       this.usernameIntroduced.set("");
     }
 
