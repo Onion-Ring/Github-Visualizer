@@ -12,13 +12,12 @@ import { ErrorService } from '../../services/error-service';
   styleUrl: './profile-info.css',
 })
 export class ProfileInfo {
-    
-  githubProfile = new GithubProfileModel();
-  accountService = inject(AccountInfoService);
+  
+  accountService = inject(AccountInfoService);  
+  githubProfile = this.accountService.getGithubProfile();  
   errorService = inject(ErrorService);
 
-  constructor(){
-    this.githubProfile = this.accountService.getGithubProfile();
+  ngOnInit() {    
     this.errorService.setErrorMessage({statusCode:undefined,message:undefined})
   }
 

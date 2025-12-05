@@ -1,29 +1,29 @@
-@if (errorService.getErrorMessage().statusCode === undefined && githubProfile.getUser() !== "") {
+@if (errorService.getErrorMessage().statusCode === undefined && githubProfile().getUser() !== "") {
 <div class="profile-info">
-    <a href={{githubProfile.getHtmlUrl()}} target="_blank">
-        <img class="profile-info__avatar" alt="github user img" src={{githubProfile.getAvatarUrl()}} />
-        <p class="profile-info__username">{{githubProfile.getUser()}}</p>
-        <p class="profile-info__name">{{githubProfile.getRealName()}} </p>
+    <a href={{githubProfile().getHtmlUrl()}} target="_blank">
+        <img class="profile-info__avatar" alt="github user img" src={{githubProfile().getAvatarUrl()}} />
+        <p class="profile-info__username">{{githubProfile().getUser()}}</p>
+        <p class="profile-info__name">{{githubProfile().getRealName()}} </p>
     </a>
 
-    <p>{{githubProfile.getUserBio()}}</p>
-    <p>{{githubProfile.getUserEmail()}}</p>
+    <p>{{githubProfile().getUserBio()}}</p>
+    <p>{{githubProfile().getUserEmail()}}</p>
 
     <div class="profile-info__follow-group">
-        <a href="{{githubProfile.getHtmlUrl()}}?tab=followers" target="_blank">
-            <p>{{githubProfile.getFollowers()}}</p>
+        <a href="{{githubProfile().getHtmlUrl()}}?tab=followers" target="_blank">
+            <p>{{githubProfile().getFollowers()}}</p>
             <p>Followers</p>
         </a>
     </div>
 
     <div class="profile-info__follow-group">
-        <a href="{{githubProfile.getHtmlUrl()}}?tab=following" target="_blank">
-            <p>{{githubProfile.getFollowing()}}</p>
+        <a href="{{githubProfile().getHtmlUrl()}}?tab=following" target="_blank">
+            <p>{{githubProfile().getFollowing()}}</p>
             <p>Following</p>
         </a>
     </div>
 
-    <p>{{githubProfile.getCreatedAt() | date:'MMMM - dd - yyyy' }}</p>
+    <p>{{githubProfile().getCreatedAt() | date:'MMMM - dd - yyyy' }}</p>
 </div>
 }@else if (errorService.getErrorMessage().statusCode !== undefined) {
 <div class="fallback-content">

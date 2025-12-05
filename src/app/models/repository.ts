@@ -9,8 +9,7 @@ export class RepositoryModel {
     private forkUrl = signal<string>("");
     private createdAt = signal<string>("");
     private updatedAt = signal<string>("");
-    private pushedAt = signal<string>("");
-    private visibility = signal<string>("");
+    private pushedAt = signal<string>("");    
 
     getName(): string {
         return this.name();
@@ -36,13 +35,7 @@ export class RepositoryModel {
     getPushedAt(): string {
         return this.pushedAt();
     }
-    getVisibility(): string {
-        return this.visibility();
-    }
 
-    setVisibility(value: string): void {
-        this.visibility.set(value);
-    }
     setCreatedAt(value: string): void {
         this.createdAt.set(value);
     }

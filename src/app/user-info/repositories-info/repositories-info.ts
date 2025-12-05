@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Repository } from "./repository/repository";
 import { GithubProfileModel } from '../../models/github-profile';
 import { GithubRequestService } from '../../services/github-request-service';
@@ -14,21 +14,13 @@ import { RepositoryModel } from '../../models/repository';
 })
 export class RepositoriesInfo {
 
-  githubProfile = new GithubProfileModel();
-  repos : RepositoryModel[] = [];
   accountService = inject(AccountInfoService);
+  githubProfile = this.accountService.getGithubProfile();
+  repos = this.accountService.getGithubRepos();  
   errorService = inject(ErrorService);
 
-  constructor() {
-    this.errorService.setErrorMessage({ statusCode: undefined, message: undefined });
-    this.githubProfile = this.accountService.getGithubProfile();         
+  ngOnInit() {
+    this.errorService.setErrorMessage({ statusCode: undefined, message: undefined });    
   }
 
-  ngOnInit() {
-    this.errorService.setErrorMessage({ statusCode: undefined, message: undefined });
-    this.githubProfile = this.accountService.getGithubProfile();
-    this.accountService.githubRepos$.subscribe(repos => {
-      this.repos = repos;
-    });
-  }
 }
