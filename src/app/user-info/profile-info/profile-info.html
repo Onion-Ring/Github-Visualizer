@@ -1,5 +1,5 @@
 @if (errorService.getErrorMessage().statusCode === undefined && githubProfile().getUser() !== "") {
-<div class="profile-info">
+<div class="profile-info" [class.animation]="animated()">
     <a href={{githubProfile().getHtmlUrl()}} target="_blank">
         <img class="profile-info__avatar" alt="github user img" src={{githubProfile().getAvatarUrl()}} />
         <p class="profile-info__username">{{githubProfile().getUser()}}</p>
@@ -23,7 +23,7 @@
         </a>
     </div>
 
-    <p>{{githubProfile().getCreatedAt() | date:'MMMM - dd - yyyy' }}</p>
+    <p>Account created at: {{githubProfile().getCreatedAt() | date:'dd/MM/yyyy' }}</p>
 </div>
 }@else if (errorService.getErrorMessage().statusCode !== undefined) {
 <div class="fallback-content">

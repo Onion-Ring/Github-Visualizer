@@ -1,10 +1,10 @@
 @if (errorService.getErrorMessage().statusCode === undefined && githubProfile().getUser() !== "") {
     
     @if (repos().length === 0){
-        <p class="no-repos"> {{githubProfile().getUser()}} has no public repositories to display.</p>
+        <p class="no-repos" [class.animate]="animate()"> {{githubProfile().getUser()}} has no public repositories to display.</p>
     }@else{
         
-        <div class="repositories-info">            
+        <div class="repositories-info" [class.animate]="animate()">            
             @for (item of repos(); track $index) {                
                 <app-repository [repo]="item"/>
             }

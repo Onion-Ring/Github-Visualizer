@@ -4,9 +4,15 @@
     background: #2424242c;
     backdrop-filter: blur(10px);
     padding: 10px;
-    color: #E5E5E3;
-    border-radius: 10px;
+    color: #E5E5E3;    
+    border-radius: 10px;   
+    
 }
+
+.animation{
+    animation: fade-in 2s ease forwards;
+}
+
 
 .profile-info a {
     color: #E5E5E3;

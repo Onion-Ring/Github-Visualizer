@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { Repository } from "./repository/repository";
 import { GithubProfileModel } from '../../models/github-profile';
 import { GithubRequestService } from '../../services/github-request-service';
@@ -18,9 +18,29 @@ export class RepositoriesInfo {
   githubProfile = this.accountService.getGithubProfile();
   repos = this.accountService.getGithubRepos();  
   errorService = inject(ErrorService);
+  animate = signal<boolean>(false);
 
   ngOnInit() {
     this.errorService.setErrorMessage({ statusCode: undefined, message: undefined });    
+  }
+
+
+  constructor(){
+
+    effect(() => {
+      const reposLength = this.repos().length;
+      this.triggerAnimation(reposLength);
+    });
+
+  }
+
+  triggerAnimation(reposLength:number){
+    if (reposLength !== undefined && reposLength > 0) {
+      this.animate.set(false);
+      requestAnimationFrame(() => {
+        this.animate.set(true);
+      });
+    }
   }
 
 }
