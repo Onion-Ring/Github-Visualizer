@@ -9,8 +9,8 @@
         </a>
     }
     <ul class="repository__dates">
-        <li>Repo created at:<span> {{repo().getCreatedAt() | date: 'dd/MM/yyyy - hh:mm:ss'}}</span></li>
-        <li>Repo updated at: <span>{{repo().getUpdatedAt() | date: 'dd/MM/yyyy - hh:mm:ss'}}</span></li>
-        <li>Last push: <span>{{repo().getPushedAt() | date: 'dd/MM/yyyy - hh:mm:ss'}}</span></li>
+        <li>Repo created at:<span> {{repo().getCreatedAt() | date: 'dd/MM/yyyy - h:mm:ss a'}}</span></li>
+        <li>Repo updated at: <span>{{repo().getUpdatedAt() | date: 'dd/MM/yyyy - h:mm:ss a'}}</span></li>
+        <li>Last push: <span>{{repo().getPushedAt() | date: 'dd/MM/yyyy - h:mm:ss a'}}</span></li>
     </ul>
 </div>
