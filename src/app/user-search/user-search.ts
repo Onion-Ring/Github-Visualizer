@@ -21,11 +21,12 @@ export class UserSearch {
   async searchUserName() {
 
     if (this.usernameIntroduced().trim().length > 0) {
+      
       this.usernameIntroduced.set(this.usernameIntroduced().trim());
       
-      try {
-        this.accountInfoService.setGithubRepositoriesInfo(await this.githubRequestService.getUserRepositories(this.usernameIntroduced()));
+      try {        
         this.accountInfoService.setGithubProfileInformation(await this.githubRequestService.getUserInformation(this.usernameIntroduced()));
+        this.accountInfoService.setGithubRepositoriesInfo(await this.githubRequestService.getUserRepositories(this.usernameIntroduced()));        
         this.errorService.setErrorMessage({ statusCode: undefined, message: undefined });                
       } catch (error: any) {
         this.errorService.setErrorMessage({ statusCode: error.response.status, message: error.response.data.message });

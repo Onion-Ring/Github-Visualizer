@@ -2,10 +2,11 @@
     width: 69%;
     backdrop-filter: blur(10px);
     padding: 10px;
-    background: #2424242c;
+    background: #ffffff75;
     border-radius: 10px;
     position: absolute;
     left: 31%;
+    border: 2.5px solid rgb(69, 67, 97);
 }
 
 .no-repos {

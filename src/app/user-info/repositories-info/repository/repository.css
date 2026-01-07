@@ -3,15 +3,16 @@
     margin: 25px 0 25px 0;
     width: 95%;
     left: 2.5%;
-    background: #18171752;    
+    background: #e7e7e7bd;    
     border-radius: 10px;
     padding: 10px;   
-    color: #E5E5E3;
-    box-shadow: 0 0 14px rgb(167, 199, 78);
+    color: #6b6b6b; 
+    word-spacing: 5px;   
+    border: 2px solid rgb(100, 98, 139);
 }
 
 .repository a{
-    color: #E5E5E3;
+    color: #6b6b6b;
     
 }
 
@@ -21,5 +22,6 @@
 }
 
 .repository__dates span{
-    color: #b9b9b8;
+    color: #6e6e6e;
+    font-weight: bold;
 }
