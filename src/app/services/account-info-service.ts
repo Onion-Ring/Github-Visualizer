@@ -40,7 +40,8 @@ export class AccountInfoService {
       repo.setFork(element.fork);      
       repo.setCreatedAt(element.created_at);
       repo.setUpdatedAt(element.updated_at);
-      repo.setPushedAt(element.pushed_at);               
+      repo.setPushedAt(element.pushed_at);  
+      repo.setOwnerName(element.owner.login);
       return repo;
     });
 

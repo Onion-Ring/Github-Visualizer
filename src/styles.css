@@ -30,11 +30,6 @@ a {
     }
 }
 
-body {
-    background-image: url("./assets/backgrounds/laptop-bg.jpg");
-    background-size: 100vw 1280px;
-    background-repeat: no-repeat;
-}
 
 button {
     cursor: pointer;

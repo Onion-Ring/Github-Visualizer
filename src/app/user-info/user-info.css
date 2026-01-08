@@ -1,11 +1,18 @@
 .user-info {
-    width: 70%;
+    width: 60%;
     height: 800px;    
     position: relative;
     border-radius: 10px;
-    margin-left: 15%;
+    margin-left: 20%;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-    
+
+}
+
+img{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -10;
 }

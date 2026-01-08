@@ -13,4 +13,17 @@
         <li>Repo updated at: <span>{{repo().getUpdatedAt() | date: 'dd/MM/yyyy - h:mm:ss a'}}</span></li>
         <li>Last push:  <span>{{repo().getPushedAt() | date: 'dd/MM/yyyy - h:mm:ss a'}}</span></li>
     </ul>
+
+    <!-- I mean, all the repos should have at least one language I think, but, just in case...  -->
+    @if(repoLanguages().length > 0){
+        <ul class="repository__languages">
+            @for (item of repoLanguages(); track $index) {
+
+                <li>{{item.getName()}}</li>
+                <li>{{item.getUsePercentage()}}</li>
+
+            }
+        </ul>
+    }
+                
 </div>

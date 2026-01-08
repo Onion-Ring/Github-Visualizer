@@ -9,7 +9,8 @@ export class RepositoryModel {
     private forkUrl = signal<string>("");
     private createdAt = signal<string>("");
     private updatedAt = signal<string>("");
-    private pushedAt = signal<string>("");    
+    private pushedAt = signal<string>("");
+    private ownerName = signal<string>("");
 
     getName(): string {
         return this.name();
@@ -35,29 +36,35 @@ export class RepositoryModel {
     getPushedAt(): string {
         return this.pushedAt();
     }
+    getOwnerName(): string {
+        return this.ownerName();
+    }
 
-    setCreatedAt(value: string): void {
-        this.createdAt.set(value);
+    setCreatedAt(createdAt: string): void {
+        this.createdAt.set(createdAt);
     }
-    setUrl(value: string): void {
-        this.url.set(value);
+    setUrl(url: string): void {
+        this.url.set(url);
     }
-    setFullName(value: string): void {
-        this.fullName.set(value);
+    setFullName(fullName: string): void {
+        this.fullName.set(fullName);
     }
-    setName(value: string): void {
-        this.name.set(value);
+    setName(name: string): void {
+        this.name.set(name);
     }
-    setPushedAt(value: string): void {
-        this.pushedAt.set(value);
+    setPushedAt(pushedAt: string): void {
+        this.pushedAt.set(pushedAt);
     }
-    setUpdatedAt(value: string): void {
-        this.updatedAt.set(value);
+    setUpdatedAt(updatedAt: string): void {
+        this.updatedAt.set(updatedAt);
     }
-    setForkUrl(value: string): void {
-        this.forkUrl.set(value);
+    setForkUrl(forkUrl: string): void {
+        this.forkUrl.set(forkUrl);
     }
-    setFork(value: boolean): void {
-        this.fork.set(value);
+    setFork(fork: boolean): void {
+        this.fork.set(fork);
+    }
+    setOwnerName(ownerName: string) {
+        this.ownerName.set(ownerName);
     }
 }
