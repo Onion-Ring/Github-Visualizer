@@ -15,15 +15,15 @@
     </ul>
 
     <!-- I mean, all the repos should have at least one language I think, but, just in case...  -->
-    @if(repoLanguages().length > 0){
-        <ul class="repository__languages">
-            @for (item of repoLanguages(); track $index) {
+    @if(repo().getRepositoryLanguages().length > 0){
+        <div class="repository__languages">
+            <div class="repository__languages-languages-graphic"></div>
+            @for (item of repo().getRepositoryLanguages(); track $index) {
 
-                <li>{{item.getName()}}</li>
-                <li>{{item.getUsePercentage()}}</li>
-
+                <div class="repository__languages-color-indicator"></div>
+                <p>{{ item.getName()}}: <span class="percentage">{{ item.getUsePercentage()  | number:'1.1-1'}}%</span></p>
             }
-        </ul>
+        </div>
     }
                 
 </div>

@@ -1,4 +1,6 @@
 import { signal } from "@angular/core";
+import { RepositoryLanguageModel } from "./repository-language";
+import { RouterTestingHarness } from "@angular/router/testing";
 
 export class RepositoryModel {
 
@@ -11,7 +13,12 @@ export class RepositoryModel {
     private updatedAt = signal<string>("");
     private pushedAt = signal<string>("");
     private ownerName = signal<string>("");
+    private repositoryLanguages = signal<RepositoryLanguageModel[]>([]);
 
+
+    getRepositoryLanguages(): RepositoryLanguageModel[]{
+        return this.repositoryLanguages();
+    }
     getName(): string {
         return this.name();
     }
@@ -66,5 +73,8 @@ export class RepositoryModel {
     }
     setOwnerName(ownerName: string) {
         this.ownerName.set(ownerName);
+    }
+    setRepositoryLanguages(repositoryLanguages: RepositoryLanguageModel[]){
+        this.repositoryLanguages.set(repositoryLanguages);
     }
 }

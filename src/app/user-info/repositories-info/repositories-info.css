@@ -1,12 +1,13 @@
-.repositories-info,.no-repos {
+.repositories-info,
+.no-repos {
     width: 69%;
-    backdrop-filter: blur(10px);
     padding: 10px;
-    background: #ffffff75;
+    background: #2424242c;
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     position: absolute;
     left: 31%;
-    border: 2.5px solid rgb(69, 67, 97);
+    
 }
 
 .no-repos {
@@ -14,9 +15,10 @@
     box-shadow: 0 0 20px rgb(199, 97, 97);
     color: rgb(214, 131, 131);
     font-size: 20px;
+    border: none;
     animation: shadow-pulse 1.5s infinite alternate;
 }
 
-.animate{
+.animate {
     animation: fade-in 2s ease forwards;
 }

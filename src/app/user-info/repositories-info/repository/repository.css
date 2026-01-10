@@ -1,27 +1,62 @@
-.repository{    
-    position: relative;    
+.repository {
+    position: relative;
     margin: 25px 0 25px 0;
     width: 95%;
     left: 2.5%;
-    background: #e7e7e7bd;    
+    background: #02020250;
+    backdrop-filter: blur(10px);
     border-radius: 10px;
-    padding: 10px;   
-    color: #6b6b6b; 
-    word-spacing: 5px;   
-    border: 2px solid rgb(100, 98, 139);
+    padding: 15px;
+    color: #e6e6e6;
+    word-spacing: 5px;    
 }
 
-.repository a{
-    color: #6b6b6b;
-    
+.repository a {
+    color: #e6e6e6;
 }
 
-.repository__dates{
+
+.percentage{
+    color: rgb(216, 216, 216);
+    font-weight: bold;
+
+}
+
+.repository__languages p {
+    display: inline-block;
+    word-spacing: 3px;
+    color: #c0c0c0;
+    padding: 6px;
+    margin: 20px 10px 5px 0px;
+}
+
+.repository__languages-color-indicator {
+    width: 12px;
+    height: 12px;
+    display: inline-flex;
+    background-color: rgb(128, 74, 74);
+    border-radius: 40px;
+}
+
+
+/* Main container where the different language percentages will be displayed */
+.repository__languages-languages-graphic {
+    width: 75%;
+    position: absolute;
+    left: 12.5%;
+    /* Remove this bg color */
+    background-color: rgb(128, 74, 74);
+    height: 15px;
+    border-radius: 20px;
+
+}
+
+.repository__dates {
     text-align: left;
     margin: 15px 0 15px 0;
 }
 
-.repository__dates span{
-    color: #6e6e6e;
+.repository__dates span {
+    color: #e7e7e7;
     font-weight: bold;
 }
