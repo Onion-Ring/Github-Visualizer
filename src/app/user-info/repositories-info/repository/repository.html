@@ -8,20 +8,42 @@
             <p>Fork</p>
         </a>
     }
-    <ul class="repository__dates">
-        <li>Repo created at: <span> {{repo().getCreatedAt() | date: 'dd/MM/yyyy - h:mm:ss a'}}</span></li>
-        <li>Repo updated at: <span>{{repo().getUpdatedAt() | date: 'dd/MM/yyyy - h:mm:ss a'}}</span></li>
-        <li>Last push:  <span>{{repo().getPushedAt() | date: 'dd/MM/yyyy - h:mm:ss a'}}</span></li>
-    </ul>
+    <div class="repository__dates">
 
+        <div>
+            <p>Repo created at:</p> 
+            <span>{{repo().getCreatedAt()|date:'dd/MM/yyyy h:mm:ss a'}}</span>
+        </div>
+            
+        <div>
+            <p>Repo updated at:</p> 
+            <span>{{repo().getUpdatedAt()|date:'dd/MM/yyyy h:mm:ss a'}}</span>
+        </div>
+
+        <div>
+            <p>Last push:</p> 
+            <span>{{repo().getPushedAt()|date:'dd/MM/yyyy h:mm:ss a'}}</span>
+        </div>
+
+        
+
+        
+
+    </div>
     <!-- I mean, all the repos should have at least one language I think, but, just in case...  -->
     @if(repo().getRepositoryLanguages().length > 0){
         <div class="repository__languages">
-            <div class="repository__languages-languages-graphic"></div>
+            <div class="repository__languages-languages-graphic">
+                <!-- Two loops here... I will find out a clever way to achieve this-->
+                @for (item of repo().getRepositoryLanguages(); track $index) {
+                    <div class="graphic-item" [ngStyle]="{'background-color': item.getColor(), 'width': item.getUsePercentage() +'%' } " ></div>
+                }
+            </div>
             @for (item of repo().getRepositoryLanguages(); track $index) {
-
-                <div class="repository__languages-color-indicator"></div>
-                <p>{{ item.getName()}}: <span class="percentage">{{ item.getUsePercentage()  | number:'1.1-1'}}%</span></p>
+                <div>
+                    <div class="repository__languages-color-indicator" [ngStyle]="{'background-color': item.getColor()}"></div>
+                    <p>{{ item.getName()}}: <span   >{{ item.getUsePercentage()  | number:'1.2-2'}}%</span></p>
+                </div>
             }
         </div>
     }
