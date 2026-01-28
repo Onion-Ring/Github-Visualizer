@@ -1,4 +1,4 @@
-import { Component, inject, output, signal } from '@angular/core';
+import { Component, inject, output, signal, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GithubRequestService } from '../services/github-request-service';
 import { AccountInfoService } from '../services/account-info-service';
@@ -8,7 +8,7 @@ import { ErrorService } from '../services/error-service';
   selector: 'app-user-search',
   imports: [FormsModule],
   templateUrl: './user-search.html',
-  styleUrl: './user-search.css',
+  styleUrl: './user-search.css',  
 })
 export class UserSearch {
 

@@ -5,10 +5,10 @@
     margin-bottom: 30px;    
     background: #2424242c;
     backdrop-filter: blur(10px);
-    width: 60%;
+    width: 70%;
     border-radius: 10px;
     position: relative;
-    left: 20%;
+    left: 15%;
 }
 
 .user-search>input {
@@ -31,4 +31,31 @@
 
 .user-search>input::placeholder {
     color: rgb(230, 230, 230);
+}
+
+@media (max-width: 1620px) {
+    .user-search {
+        width: 80%;
+        left: 10%;
+    }    
+}
+
+@media (max-width: 1300px) {
+    .user-search {
+        width: 100%;
+        left: 0;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .user-search>input {
+        width: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    .user-search>input {
+        width: 100%;
+    }
 }

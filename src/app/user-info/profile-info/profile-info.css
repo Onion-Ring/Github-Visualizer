@@ -56,3 +56,15 @@ p {
 
 
 }
+
+@media (max-width: 900px) {
+
+    .profile-info {
+        width: 100%;
+        background: #2424249f;
+        position: relative;
+    }
+
+
+}
+
