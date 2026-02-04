@@ -11,11 +11,15 @@ export class AccountInfoService {
 
   private githubProfile = signal<GithubProfileModel>(new GithubProfileModel());
   private githubRepos = signal<RepositoryModel[]>([]);
-
+  private repositorySet = signal<boolean>(false);
   private githubRequestService = new GithubRequestService();
 
   constructor(githubRequestService: GithubRequestService) {
     this.githubRequestService = githubRequestService;
+  }
+
+  getRepositorySet(){
+    return this.repositorySet;
   }
 
   getGithubProfile() {
@@ -26,6 +30,10 @@ export class AccountInfoService {
     return this.githubRepos;
   }
 
+
+  setRepositorySet(repoSet:boolean){
+    this.repositorySet.set(repoSet);
+  }
   public setGithubProfileInformation(responseData: any) {
     this.githubProfile().setAvatarUrl(responseData.avatar_url);
     this.githubProfile().setUser(responseData.login);
@@ -41,8 +49,7 @@ export class AccountInfoService {
   public async setGithubRepositoriesInfo(responseData: any[]) {
 
     const repos =  responseData.map(element => {
-      const repo = new RepositoryModel();
-      
+      const repo = new RepositoryModel();      
       repo.setName(element.name);
       repo.setFullName(element.full_name);
       repo.setUrl(element.html_url);
@@ -67,7 +74,7 @@ export class AccountInfoService {
 
       repos[i].setRepositoryLanguages(languages);
     }
-
+    this.repositorySet.set(true);
     this.githubRepos.set(repos);
 
   }

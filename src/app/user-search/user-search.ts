@@ -22,6 +22,7 @@ export class UserSearch {
 
     if (this.usernameIntroduced().trim().length > 0) {
       
+      this.accountInfoService.setRepositorySet(false);
       this.usernameIntroduced.set(this.usernameIntroduced().trim());
       
       try {        

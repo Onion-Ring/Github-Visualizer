@@ -1,19 +1,16 @@
 .repositories-info,
 .no-repos {
-    width: 69%;
-    padding: 10px;
-    background: #2424242c;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
+    width: 69%;    
     position: absolute;
-    left: 31%;
-    
+
+    left: 31%;    
 }
 
 .no-repos {
-    background: #4e2424a2;
+    background: rgba(139, 65, 65, 0.555);    
+    backdrop-filter: blur(2.5px);
     box-shadow: 0 0 20px rgb(199, 97, 97);
-    color: rgb(214, 131, 131);
+    color: rgb(214, 131, 131);    
     font-size: 20px;
     border: none;
     animation: shadow-pulse 1.5s infinite alternate;

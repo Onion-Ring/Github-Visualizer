@@ -2,7 +2,7 @@
     width: 30%;
     position: absolute;
     background: #2424242c;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2.5px);
     padding: 10px;
     color: #E5E5E3;    
     border-radius: 10px;       
@@ -19,8 +19,9 @@
 
 .fallback-content {
     width: 100%;
-    background: #4e2424a2;
-    backdrop-filter: blur(10px);
+    background: rgba(139, 65, 65, 0.555);
+    
+    backdrop-filter: blur(2.5px);
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 20px rgb(199, 97, 97);
@@ -60,8 +61,7 @@ p {
 @media (max-width: 900px) {
 
     .profile-info {
-        width: 100%;
-        background: #2424249f;
+        width: 100%;        
         position: relative;
     }
 

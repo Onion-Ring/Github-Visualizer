@@ -24,11 +24,6 @@
             <p>Last push:</p> 
             <span>{{repo().getPushedAt()|date:'dd/MM/yyyy h:mm:ss a'}}</span>
         </div>
-
-        
-
-        
-
     </div>
     <!-- I mean, all the repos should have at least one language I think, but, just in case...  -->
     @if(repo().getRepositoryLanguages().length > 0){

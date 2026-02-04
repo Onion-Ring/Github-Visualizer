@@ -17,6 +17,7 @@ export class RepositoriesInfo {
   accountService = inject(AccountInfoService);
   githubProfile = this.accountService.getGithubProfile();
   repos = this.accountService.getGithubRepos();  
+  reposSet = this.accountService.getRepositorySet();
   errorService = inject(ErrorService);
   animate = signal<boolean>(false);
 

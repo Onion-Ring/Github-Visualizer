@@ -1,14 +1,21 @@
+
+
+
+    
 @if (errorService.getErrorMessage().statusCode === undefined && githubProfile().getUser() !== "") {
     
-    @if (repos().length === 0){
+    @if (!reposSet()) {
+        <embed src="/assets/loading.svg" height="170" type="image/svg+xml"
+        pluginspage="http://www.adobe.com/svg/viewer/install/" />        
+    }@else if (repos().length === 0) {
+        <!-- Loaded but there's no public repos -->
         <p class="no-repos" [class.animate]="animate()"> {{githubProfile().getUser()}} has no public repositories to display.</p>
-    }@else{
-        
+    }@else {
+        <!-- Loaded with public repos -->
         <div class="repositories-info" [class.animate]="animate()">            
             @for (item of repos(); track $index) {                
                 <app-repository [repo]="item"/>
             }
-        </div>
+        </div>     
     }
-
 }

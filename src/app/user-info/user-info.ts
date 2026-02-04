@@ -1,8 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { ProfileInfo } from "./profile-info/profile-info";
 import { RepositoriesInfo } from "./repositories-info/repositories-info";
-import { GithubProfileModel } from '../models/github-profile';
-import { GithubRequestService } from '../services/github-request-service';
 
 @Component({
   selector: 'app-user-info',
