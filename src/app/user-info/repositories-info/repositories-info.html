@@ -5,7 +5,7 @@
 @if (errorService.getErrorMessage().statusCode === undefined && githubProfile().getUser() !== "") {
             
     @if (!reposSet()) {
-        <embed src="/assets/loading.svg" height="170" type="image/svg+xml"
+        <embed src="./assets/loading.svg" height="170" type="image/svg+xml"
         pluginspage="http://www.adobe.com/svg/viewer/install/" />        
     }@else if (repos().length === 0) {
         <!-- Loaded but there's no public repos -->

@@ -65,6 +65,9 @@
             },
             "development": {
               "buildTarget": "Github-Visualizer:build:development"
+            },
+            "docs": {
+              "buildTarget": "onion-ring-portfolio:build:docs"
             }
           },
           "defaultConfiguration": "development"
