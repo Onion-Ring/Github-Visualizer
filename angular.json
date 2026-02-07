@@ -50,6 +50,9 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "docs": {
+              "outputPath": "docs/"
             }
           },
           "defaultConfiguration": "production"
