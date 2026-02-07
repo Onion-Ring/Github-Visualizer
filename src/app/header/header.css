@@ -1,4 +1,4 @@
-header{
+header {
     width: 70%;
     margin-top: 20px;
     background-color: rgba(153, 97, 206, 0.247);
@@ -9,23 +9,23 @@ header{
     height: 107px;
 }
 
-header h1{
- height: 50px;
- left: 10%;
- position: absolute;
- text-align: center;
- top: calc(50% - 25px);   
+header h1 {
+    height: 50px;
+    left: 10%;
+    position: absolute;
+    text-align: center;
+    top: calc(50% - 25px);
 }
 
-header span{
-    color: rgb(170, 130, 207);    
+header span {
+    color: rgb(170, 130, 207);
     display: block;
     right: 10px;
     bottom: 10px;
     position: absolute;
 }
 
-header > embed{
+header>embed {
     position: absolute;
     left: 2%;
     margin-top: 13px;
@@ -43,7 +43,8 @@ header > embed{
         width: 100%;
         left: 0;
     }
-    header h1{
+
+    header h1 {
         left: 15%;
     }
 
@@ -56,4 +57,16 @@ header > embed{
         left: 20%;
     }
 
+}
+
+@media (max-width: 500px) {
+
+    header h1 {
+        left: 25%;
+        font-size: 22px;
+    }
+
+    header span{
+        font-size: 14px;
+    }
 }

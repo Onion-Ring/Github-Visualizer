@@ -103,3 +103,16 @@ div{
     
     
 }
+
+
+@media (max-width: 500px) {
+
+    .repository__dates{
+        width: 100%;
+        margin: 10px 0 10px 0;
+        padding: 3px;
+    }
+
+
+}
+
