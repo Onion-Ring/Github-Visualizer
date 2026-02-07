@@ -8,6 +8,10 @@
     word-spacing: 5px;    
 }
 
+.repository:first-child{
+    margin: 0 0 25px 0;
+}
+
 .repository a {
     color: #e6e6e6;
 }

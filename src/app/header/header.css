@@ -17,6 +17,14 @@ header h1{
  top: calc(50% - 25px);   
 }
 
+header span{
+    color: rgb(170, 130, 207);    
+    display: block;
+    right: 10px;
+    bottom: 10px;
+    position: absolute;
+}
+
 header > embed{
     position: absolute;
     left: 2%;

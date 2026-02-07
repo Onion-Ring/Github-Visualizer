@@ -37,7 +37,7 @@
             @for (item of repo().getRepositoryLanguages(); track $index) {
                 <div>
                     <div class="repository__languages-color-indicator" [ngStyle]="{'background-color': item.getColor()}"></div>
-                    <p>{{ item.getName()}}: <span   >{{ item.getUsePercentage()  | number:'1.2-2'}}%</span></p>
+                    <p>{{ item.getName()}}: <span   >{{ item.getUsePercentage()  | number:'1.1-1'}}%</span></p>
                 </div>
             }
         </div>

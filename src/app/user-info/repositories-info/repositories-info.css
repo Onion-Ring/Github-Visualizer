@@ -1,8 +1,7 @@
 .repositories-info,
-.no-repos {
+.no-repos,embed {
     width: 69%;    
     position: absolute;
-
     left: 31%;    
 }
 
