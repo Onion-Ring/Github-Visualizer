@@ -1,8 +1,7 @@
 .profile-info {
     width: 30%;
     position: absolute;
-    background: #2424242c;
-    backdrop-filter: blur(2.5px);
+    background: #0a0a0aa2;
     padding: 10px;
     color: #E5E5E3;    
     border-radius: 10px;       
